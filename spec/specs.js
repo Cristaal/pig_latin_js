@@ -11,7 +11,11 @@ describe('pigLatin', function() {
     expect(pigLatin("shelter")).to.equal("eltershay")
   });
 
-  it("moves u's that come after q's", function() {
+  it("moves u's that come after q's only at the beginning of words", function() {
     expect(pigLatin("quest")).to.equal("estquay")
+  });
+
+  it("moves the first 3 consecutive consonants to the end of the word and adds 'ay'", function() {
+    expect(pigLatin("squeal")).to.equal("ealsquay")
   });
 });
